@@ -4,6 +4,7 @@
 import axios from 'axios'
 
 export default {
+  name : "ClientList", 
   data() {
     return {
       clients: [],

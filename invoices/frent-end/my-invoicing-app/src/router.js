@@ -1,20 +1,31 @@
 
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Clients from '../components/Clients.vue'
-import Invoices from '../components/Invoices.vue'
-import InvoiceItems from '../components/InvoiceItems.vue'
+import Router from 'vue-router'
+import Clients from './components/ClientList.vue'
+import InvoiceItems from './components/InvoiceItems.vue'
 
-Vue.use(VueRouter)
+Vue.use(Router)
+
 
 const routes = [
-  { path: '/clients', component: Clients },
-  { path: '/invoices', component: Invoices },
-  { path: '/invoice-items', component: InvoiceItems }
-]
+    {
+        name : "home", 
+        path: "/",
+       component : InvoiceItems,
+    },
+    {
+        name : "clients",
+        path: "/client",
+        component : Clients,
+    },
+  ]
 
-const router = new VueRouter({
-  routes
-})
 
-export default router
+export default new Router({
+    mode : "history",
+    routes : routes,
+});
+
+
+
+
